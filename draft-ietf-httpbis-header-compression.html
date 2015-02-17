@@ -448,7 +448,7 @@ ul p {
        content: "Peon & Ruellan";
   }
   @bottom-center {
-       content: "Expires August 14, 2015";
+       content: "Expires August 21, 2015";
   }
   @bottom-right {
        content: "[Page " counter(page) "]";
@@ -571,7 +571,7 @@ ul.toc a:first-child {
       <meta name="dct.creator" content="Peon, R.">
       <meta name="dct.creator" content="Ruellan, H.">
       <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-httpbis-header-compression-latest">
-      <meta name="dct.issued" scheme="ISO8601" content="2015-02-10">
+      <meta name="dct.issued" scheme="ISO8601" content="2015-02-17">
       <meta name="dct.abstract" content="This specification defines HPACK, a compression format for efficiently representing HTTP header fields, to be used in HTTP/2.">
       <meta name="description" content="This specification defines HPACK, a compression format for efficiently representing HTTP header fields, to be used in HTTP/2.">
    </head>
@@ -591,12 +591,12 @@ ul.toc a:first-child {
                <td class="right">H. Ruellan</td>
             </tr>
             <tr>
-               <td class="left">Expires: August 14, 2015</td>
+               <td class="left">Expires: August 21, 2015</td>
                <td class="right">Canon CRF</td>
             </tr>
             <tr>
                <td class="left"></td>
-               <td class="right">February 10, 2015</td>
+               <td class="right">February 17, 2015</td>
             </tr>
          </tbody>
       </table>
@@ -620,7 +620,7 @@ ul.toc a:first-child {
             documents at any time. It is inappropriate to use Internet-Drafts as reference material or to cite them other than as “work
             in progress”.
          </p>
-         <p>This Internet-Draft will expire on August 14, 2015.</p>
+         <p>This Internet-Draft will expire on August 21, 2015.</p>
       </div>
       <div id="rfc.copyrightnotice">
          <h1><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
@@ -1833,9 +1833,9 @@ else
             </p>
          </div>
          <div id="rfc.section.A.p.2">
-            <p>The static table was created by listing the most common header fields that are valid for messages exchanged inside a HTTP/2
-               connection. For header fields with a few frequent values, an entry was added for each of these frequent values. For other
-               header fields, an entry was added with an empty value.
+            <p>The static table was created from the most frequent header fields used by popular web sites, with the addition of HTTP/2-specific
+               pseudo-header fields (see <a href="https://tools.ietf.org/html/draft-ietf-httpbis-http2-17#section-8.1.2.1" title="Pseudo-Header Fields">Section 8.1.2.1</a> of <a href="#HTTP2"><cite title="Hypertext Transfer Protocol version 2">[HTTP2]</cite></a>). For header fields with a few frequent values, an entry was added for each of these frequent values. For other header fields,
+               an entry was added with an empty value.
             </p>
          </div>
          <div id="rfc.section.A.p.3">
