@@ -5,10 +5,10 @@
 HTTPbis Working Group                                          M. Belshe
 Internet-Draft                                                     Twist
 Intended status: Standards Track                                 R. Peon
-Expires: September 17, 2015                                  Google, Inc
+Expires: September 25, 2015                                  Google, Inc
                                                          M. Thomson, Ed.
                                                                  Mozilla
-                                                          March 16, 2015
+                                                          March 24, 2015
 
 
                  Hypertext Transfer Protocol version 2
@@ -53,12 +53,12 @@ Status of This Memo
 
 
 
-Belshe, et al.         Expires September 17, 2015               [Page 1]
+Belshe, et al.         Expires September 25, 2015               [Page 1]
 
 Internet-Draft                   HTTP/2                       March 2015
 
 
-   This Internet-Draft will expire on September 17, 2015.
+   This Internet-Draft will expire on September 25, 2015.
 
 Copyright Notice
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Belshe, et al.         Expires September 17, 2015               [Page 2]
+Belshe, et al.         Expires September 25, 2015               [Page 2]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -165,7 +165,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015               [Page 3]
+Belshe, et al.         Expires September 25, 2015               [Page 3]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -183,28 +183,28 @@ Internet-Draft                   HTTP/2                       March 2015
    12. Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  78
    13. References  . . . . . . . . . . . . . . . . . . . . . . . . .  79
      13.1.  Normative References . . . . . . . . . . . . . . . . . .  79
-     13.2.  Informative References . . . . . . . . . . . . . . . . .  80
-     13.3.  URIs . . . . . . . . . . . . . . . . . . . . . . . . . .  81
-   Appendix A.  TLS 1.2 Cipher Suite Black List  . . . . . . . . . .  82
-   Appendix B.  Change Log . . . . . . . . . . . . . . . . . . . . .  86
-     B.1.  Since draft-ietf-httpbis-http2-15 . . . . . . . . . . . .  86
-     B.2.  Since draft-ietf-httpbis-http2-14 . . . . . . . . . . . .  86
-     B.3.  Since draft-ietf-httpbis-http2-13 . . . . . . . . . . . .  87
-     B.4.  Since draft-ietf-httpbis-http2-12 . . . . . . . . . . . .  87
-     B.5.  Since draft-ietf-httpbis-http2-11 . . . . . . . . . . . .  87
-     B.6.  Since draft-ietf-httpbis-http2-10 . . . . . . . . . . . .  87
-     B.7.  Since draft-ietf-httpbis-http2-09 . . . . . . . . . . . .  88
-     B.8.  Since draft-ietf-httpbis-http2-08 . . . . . . . . . . . .  88
-     B.9.  Since draft-ietf-httpbis-http2-07 . . . . . . . . . . . .  89
-     B.10. Since draft-ietf-httpbis-http2-06 . . . . . . . . . . . .  89
-     B.11. Since draft-ietf-httpbis-http2-05 . . . . . . . . . . . .  89
-     B.12. Since draft-ietf-httpbis-http2-04 . . . . . . . . . . . .  89
-     B.13. Since draft-ietf-httpbis-http2-03 . . . . . . . . . . . .  90
-     B.14. Since draft-ietf-httpbis-http2-02 . . . . . . . . . . . .  90
-     B.15. Since draft-ietf-httpbis-http2-01 . . . . . . . . . . . .  90
-     B.16. Since draft-ietf-httpbis-http2-00 . . . . . . . . . . . .  91
-     B.17. Since draft-mbelshe-httpbis-spdy-00 . . . . . . . . . . .  91
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  91
+     13.2.  Informative References . . . . . . . . . . . . . . . . .  81
+     13.3.  URIs . . . . . . . . . . . . . . . . . . . . . . . . . .  82
+   Appendix A.  TLS 1.2 Cipher Suite Black List  . . . . . . . . . .  83
+   Appendix B.  Change Log . . . . . . . . . . . . . . . . . . . . .  87
+     B.1.  Since draft-ietf-httpbis-http2-15 . . . . . . . . . . . .  87
+     B.2.  Since draft-ietf-httpbis-http2-14 . . . . . . . . . . . .  87
+     B.3.  Since draft-ietf-httpbis-http2-13 . . . . . . . . . . . .  88
+     B.4.  Since draft-ietf-httpbis-http2-12 . . . . . . . . . . . .  88
+     B.5.  Since draft-ietf-httpbis-http2-11 . . . . . . . . . . . .  88
+     B.6.  Since draft-ietf-httpbis-http2-10 . . . . . . . . . . . .  88
+     B.7.  Since draft-ietf-httpbis-http2-09 . . . . . . . . . . . .  89
+     B.8.  Since draft-ietf-httpbis-http2-08 . . . . . . . . . . . .  89
+     B.9.  Since draft-ietf-httpbis-http2-07 . . . . . . . . . . . .  90
+     B.10. Since draft-ietf-httpbis-http2-06 . . . . . . . . . . . .  90
+     B.11. Since draft-ietf-httpbis-http2-05 . . . . . . . . . . . .  90
+     B.12. Since draft-ietf-httpbis-http2-04 . . . . . . . . . . . .  90
+     B.13. Since draft-ietf-httpbis-http2-03 . . . . . . . . . . . .  91
+     B.14. Since draft-ietf-httpbis-http2-02 . . . . . . . . . . . .  91
+     B.15. Since draft-ietf-httpbis-http2-01 . . . . . . . . . . . .  91
+     B.16. Since draft-ietf-httpbis-http2-00 . . . . . . . . . . . .  92
+     B.17. Since draft-mbelshe-httpbis-spdy-00 . . . . . . . . . . .  92
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  92
 
 1.  Introduction
 
@@ -221,7 +221,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015               [Page 4]
+Belshe, et al.         Expires September 25, 2015               [Page 4]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -277,7 +277,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015               [Page 5]
+Belshe, et al.         Expires September 25, 2015               [Page 5]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -333,7 +333,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015               [Page 6]
+Belshe, et al.         Expires September 25, 2015               [Page 6]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -389,7 +389,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015               [Page 7]
+Belshe, et al.         Expires September 25, 2015               [Page 7]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -445,7 +445,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015               [Page 8]
+Belshe, et al.         Expires September 25, 2015               [Page 8]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -501,7 +501,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015               [Page 9]
+Belshe, et al.         Expires September 25, 2015               [Page 9]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -557,7 +557,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 10]
+Belshe, et al.         Expires September 25, 2015              [Page 10]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -613,7 +613,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 11]
+Belshe, et al.         Expires September 25, 2015              [Page 11]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -669,7 +669,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 12]
+Belshe, et al.         Expires September 25, 2015              [Page 12]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -725,7 +725,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 13]
+Belshe, et al.         Expires September 25, 2015              [Page 13]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -781,7 +781,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 14]
+Belshe, et al.         Expires September 25, 2015              [Page 14]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -837,7 +837,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 15]
+Belshe, et al.         Expires September 25, 2015              [Page 15]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -893,7 +893,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 16]
+Belshe, et al.         Expires September 25, 2015              [Page 16]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -949,7 +949,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 17]
+Belshe, et al.         Expires September 25, 2015              [Page 17]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1005,7 +1005,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 18]
+Belshe, et al.         Expires September 25, 2015              [Page 18]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1061,7 +1061,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 19]
+Belshe, et al.         Expires September 25, 2015              [Page 19]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1117,7 +1117,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 20]
+Belshe, et al.         Expires September 25, 2015              [Page 20]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1173,7 +1173,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 21]
+Belshe, et al.         Expires September 25, 2015              [Page 21]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1229,7 +1229,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 22]
+Belshe, et al.         Expires September 25, 2015              [Page 22]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1285,7 +1285,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 23]
+Belshe, et al.         Expires September 25, 2015              [Page 23]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1341,7 +1341,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 24]
+Belshe, et al.         Expires September 25, 2015              [Page 24]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1397,7 +1397,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 25]
+Belshe, et al.         Expires September 25, 2015              [Page 25]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1453,7 +1453,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 26]
+Belshe, et al.         Expires September 25, 2015              [Page 26]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1509,7 +1509,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 27]
+Belshe, et al.         Expires September 25, 2015              [Page 27]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1565,7 +1565,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 28]
+Belshe, et al.         Expires September 25, 2015              [Page 28]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1621,7 +1621,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 29]
+Belshe, et al.         Expires September 25, 2015              [Page 29]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1677,7 +1677,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 30]
+Belshe, et al.         Expires September 25, 2015              [Page 30]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1733,7 +1733,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 31]
+Belshe, et al.         Expires September 25, 2015              [Page 31]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1789,7 +1789,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 32]
+Belshe, et al.         Expires September 25, 2015              [Page 32]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1845,7 +1845,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 33]
+Belshe, et al.         Expires September 25, 2015              [Page 33]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1901,7 +1901,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 34]
+Belshe, et al.         Expires September 25, 2015              [Page 34]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -1957,7 +1957,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 35]
+Belshe, et al.         Expires September 25, 2015              [Page 35]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2013,7 +2013,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 36]
+Belshe, et al.         Expires September 25, 2015              [Page 36]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2069,7 +2069,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 37]
+Belshe, et al.         Expires September 25, 2015              [Page 37]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2125,7 +2125,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 38]
+Belshe, et al.         Expires September 25, 2015              [Page 38]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2181,7 +2181,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 39]
+Belshe, et al.         Expires September 25, 2015              [Page 39]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2237,7 +2237,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 40]
+Belshe, et al.         Expires September 25, 2015              [Page 40]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2293,7 +2293,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 41]
+Belshe, et al.         Expires September 25, 2015              [Page 41]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2349,7 +2349,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 42]
+Belshe, et al.         Expires September 25, 2015              [Page 42]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2405,7 +2405,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 43]
+Belshe, et al.         Expires September 25, 2015              [Page 43]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2461,7 +2461,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 44]
+Belshe, et al.         Expires September 25, 2015              [Page 44]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2517,7 +2517,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 45]
+Belshe, et al.         Expires September 25, 2015              [Page 45]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2573,7 +2573,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 46]
+Belshe, et al.         Expires September 25, 2015              [Page 46]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2629,7 +2629,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 47]
+Belshe, et al.         Expires September 25, 2015              [Page 47]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2685,7 +2685,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 48]
+Belshe, et al.         Expires September 25, 2015              [Page 48]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2741,7 +2741,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 49]
+Belshe, et al.         Expires September 25, 2015              [Page 49]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2797,7 +2797,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 50]
+Belshe, et al.         Expires September 25, 2015              [Page 50]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2853,7 +2853,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 51]
+Belshe, et al.         Expires September 25, 2015              [Page 51]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2909,7 +2909,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 52]
+Belshe, et al.         Expires September 25, 2015              [Page 52]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -2965,7 +2965,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 53]
+Belshe, et al.         Expires September 25, 2015              [Page 53]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3021,7 +3021,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 54]
+Belshe, et al.         Expires September 25, 2015              [Page 54]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3077,7 +3077,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 55]
+Belshe, et al.         Expires September 25, 2015              [Page 55]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3133,7 +3133,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 56]
+Belshe, et al.         Expires September 25, 2015              [Page 56]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3189,7 +3189,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 57]
+Belshe, et al.         Expires September 25, 2015              [Page 57]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3245,7 +3245,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 58]
+Belshe, et al.         Expires September 25, 2015              [Page 58]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3301,7 +3301,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 59]
+Belshe, et al.         Expires September 25, 2015              [Page 59]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3357,7 +3357,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 60]
+Belshe, et al.         Expires September 25, 2015              [Page 60]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3413,7 +3413,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 61]
+Belshe, et al.         Expires September 25, 2015              [Page 61]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3469,7 +3469,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 62]
+Belshe, et al.         Expires September 25, 2015              [Page 62]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3525,7 +3525,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 63]
+Belshe, et al.         Expires September 25, 2015              [Page 63]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3581,7 +3581,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 64]
+Belshe, et al.         Expires September 25, 2015              [Page 64]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3637,7 +3637,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 65]
+Belshe, et al.         Expires September 25, 2015              [Page 65]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3693,7 +3693,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 66]
+Belshe, et al.         Expires September 25, 2015              [Page 66]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3749,7 +3749,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 67]
+Belshe, et al.         Expires September 25, 2015              [Page 67]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3805,7 +3805,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 68]
+Belshe, et al.         Expires September 25, 2015              [Page 68]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3861,7 +3861,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 69]
+Belshe, et al.         Expires September 25, 2015              [Page 69]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3917,7 +3917,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 70]
+Belshe, et al.         Expires September 25, 2015              [Page 70]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -3973,7 +3973,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 71]
+Belshe, et al.         Expires September 25, 2015              [Page 71]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4029,7 +4029,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 72]
+Belshe, et al.         Expires September 25, 2015              [Page 72]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4085,7 +4085,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 73]
+Belshe, et al.         Expires September 25, 2015              [Page 73]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4141,7 +4141,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 74]
+Belshe, et al.         Expires September 25, 2015              [Page 74]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4197,7 +4197,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 75]
+Belshe, et al.         Expires September 25, 2015              [Page 75]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4253,7 +4253,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 76]
+Belshe, et al.         Expires September 25, 2015              [Page 76]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4309,7 +4309,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 77]
+Belshe, et al.         Expires September 25, 2015              [Page 77]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4365,7 +4365,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 78]
+Belshe, et al.         Expires September 25, 2015              [Page 78]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4392,81 +4392,99 @@ Internet-Draft                   HTTP/2                       March 2015
               progress), February 2015.
 
    [COOKIE]   Barth, A., "HTTP State Management Mechanism", RFC 6265,
-              April 2011.
+              April 2011, <http://www.rfc-editor.org/info/rfc6265>.
 
    [FIPS186]  NIST, "Digital Signature Standard (DSS)", FIPS PUB 186-4,
               July 2013, <http://dx.doi.org/10.6028/NIST.FIPS.186-4>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119, March 1997.
+              Requirement Levels", BCP 14, RFC 2119, March 1997,
+              <http://www.rfc-editor.org/info/rfc2119>.
 
-   [RFC2818]  Rescorla, E., "HTTP Over TLS", RFC 2818, May 2000.
+   [RFC2818]  Rescorla, E., "HTTP Over TLS", RFC 2818, May 2000,
+              <http://www.rfc-editor.org/info/rfc2818>.
 
    [RFC3986]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
               Resource Identifier (URI): Generic Syntax", STD 66, RFC
-              3986, January 2005.
+              3986, January 2005,
+              <http://www.rfc-editor.org/info/rfc3986>.
 
    [RFC4648]  Josefsson, S., "The Base16, Base32, and Base64 Data
-              Encodings", RFC 4648, October 2006.
+              Encodings", RFC 4648, October 2006,
+              <http://www.rfc-editor.org/info/rfc4648>.
 
    [RFC5226]  Narten, T. and H. Alvestrand, "Guidelines for Writing an
               IANA Considerations Section in RFCs", BCP 26, RFC 5226,
-              May 2008.
-
-   [RFC5234]  Crocker, D. and P. Overell, "Augmented BNF for Syntax
-              Specifications: ABNF", STD 68, RFC 5234, January 2008.
+              May 2008, <http://www.rfc-editor.org/info/rfc5226>.
 
 
 
 
 
-
-Belshe, et al.         Expires September 17, 2015              [Page 79]
+Belshe, et al.         Expires September 25, 2015              [Page 79]
 
 Internet-Draft                   HTTP/2                       March 2015
 
 
+   [RFC5234]  Crocker, D. and P. Overell, "Augmented BNF for Syntax
+              Specifications: ABNF", STD 68, RFC 5234, January 2008,
+              <http://www.rfc-editor.org/info/rfc5234>.
+
    [RFC7230]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
               Protocol (HTTP/1.1): Message Syntax and Routing", RFC
-              7230, June 2014.
+              7230, June 2014, <http://www.rfc-editor.org/info/rfc7230>.
 
    [RFC7231]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
               Protocol (HTTP/1.1): Semantics and Content", RFC 7231,
-              June 2014.
+              June 2014, <http://www.rfc-editor.org/info/rfc7231>.
 
    [RFC7232]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
               Protocol (HTTP/1.1): Conditional Requests", RFC 7232, June
-              2014.
+              2014, <http://www.rfc-editor.org/info/rfc7232>.
 
    [RFC7233]  Fielding, R., Ed., Lafon, Y., Ed., and J. Reschke, Ed.,
               "Hypertext Transfer Protocol (HTTP/1.1): Range Requests",
-              RFC 7233, June 2014.
+              RFC 7233, June 2014,
+              <http://www.rfc-editor.org/info/rfc7233>.
 
    [RFC7234]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
               Ed., "Hypertext Transfer Protocol (HTTP/1.1): Caching",
-              RFC 7234, June 2014.
+              RFC 7234, June 2014,
+              <http://www.rfc-editor.org/info/rfc7234>.
 
    [RFC7235]  Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
-              Protocol (HTTP/1.1): Authentication", RFC 7235, June 2014.
+              Protocol (HTTP/1.1): Authentication", RFC 7235, June 2014,
+              <http://www.rfc-editor.org/info/rfc7235>.
 
    [TCP]      Postel, J., "Transmission Control Protocol", STD 7, RFC
-              793, September 1981.
+              793, September 1981,
+              <http://www.rfc-editor.org/info/rfc793>.
 
    [TLS-ALPN]
               Friedl, S., Popov, A., Langley, A., and E. Stephan,
               "Transport Layer Security (TLS) Application-Layer Protocol
-              Negotiation Extension", RFC 7301, July 2014.
+              Negotiation Extension", RFC 7301, July 2014,
+              <http://www.rfc-editor.org/info/rfc7301>.
 
    [TLS-ECDHE]
               Rescorla, E., "TLS Elliptic Curve Cipher Suites with SHA-
               256/384 and AES Galois Counter Mode (GCM)", RFC 5289,
-              August 2008.
+              August 2008, <http://www.rfc-editor.org/info/rfc5289>.
 
    [TLS-EXT]  Eastlake, D., "Transport Layer Security (TLS) Extensions:
-              Extension Definitions", RFC 6066, January 2011.
+              Extension Definitions", RFC 6066, January 2011,
+              <http://www.rfc-editor.org/info/rfc6066>.
+
+
+
+Belshe, et al.         Expires September 25, 2015              [Page 80]
+
+Internet-Draft                   HTTP/2                       March 2015
+
 
    [TLS12]    Dierks, T. and E. Rescorla, "The Transport Layer Security
-              (TLS) Protocol Version 1.2", RFC 5246, August 2008.
+              (TLS) Protocol Version 1.2", RFC 5246, August 2008,
+              <http://www.rfc-editor.org/info/rfc5246>.
 
 13.2.  Informative References
 
@@ -4474,17 +4492,9 @@ Internet-Draft                   HTTP/2                       March 2015
               Alternative Services", draft-ietf-httpbis-alt-svc-06 (work
               in progress), February 2015.
 
-
-
-
-Belshe, et al.         Expires September 17, 2015              [Page 80]
-
-Internet-Draft                   HTTP/2                       March 2015
-
-
    [BCP90]    Klyne, G., Nottingham, M., and J. Mogul, "Registration
               Procedures for Message Header Fields", BCP 90, RFC 3864,
-              September 2004.
+              September 2004, <http://www.rfc-editor.org/info/rfc3864>.
 
    [BREACH]   Gluck, Y., Harris, N., and A. Prado, "BREACH: Reviving the
               CRIME Attack", July 2013,
@@ -4499,22 +4509,34 @@ Internet-Draft                   HTTP/2                       March 2015
               Latest version available at [5].
 
    [RFC3749]  Hollenbeck, S., "Transport Layer Security Protocol
-              Compression Methods", RFC 3749, May 2004.
+              Compression Methods", RFC 3749, May 2004,
+              <http://www.rfc-editor.org/info/rfc3749>.
 
    [RFC4492]  Blake-Wilson, S., Bolyard, N., Gupta, V., Hawk, C., and B.
               Moeller, "Elliptic Curve Cryptography (ECC) Cipher Suites
-              for Transport Layer Security (TLS)", RFC 4492, May 2006.
+              for Transport Layer Security (TLS)", RFC 4492, May 2006,
+              <http://www.rfc-editor.org/info/rfc4492>.
 
    [RFC6585]  Nottingham, M. and R. Fielding, "Additional HTTP Status
-              Codes", RFC 6585, April 2012.
+              Codes", RFC 6585, April 2012,
+              <http://www.rfc-editor.org/info/rfc6585>.
 
    [RFC7323]  Borman, D., Braden, B., Jacobson, V., and R.
               Scheffenegger, "TCP Extensions for High Performance", RFC
-              7323, September 2014.
+              7323, September 2014,
+              <http://www.rfc-editor.org/info/rfc7323>.
 
    [TALKING]  Huang, L-S., Chen, E., Barth, A., Rescorla, E., and C.
               Jackson, "Talking to Yourself for Fun and Profit", 2011,
               <http://w2spconf.com/2011/papers/websocket.pdf>.
+
+
+
+
+Belshe, et al.         Expires September 25, 2015              [Page 81]
+
+Internet-Draft                   HTTP/2                       March 2015
+
 
    [TLSBCP]   Sheffer, Y., Holz, R., and P. Saint-Andre,
               "Recommendations for Secure Use of TLS and DTLS", draft-
@@ -4533,7 +4555,41 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 81]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Belshe, et al.         Expires September 25, 2015              [Page 82]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4589,7 +4645,7 @@ Appendix A.  TLS 1.2 Cipher Suite Black List
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 82]
+Belshe, et al.         Expires September 25, 2015              [Page 83]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4645,7 +4701,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 83]
+Belshe, et al.         Expires September 25, 2015              [Page 84]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4701,7 +4757,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 84]
+Belshe, et al.         Expires September 25, 2015              [Page 85]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4757,7 +4813,7 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 85]
+Belshe, et al.         Expires September 25, 2015              [Page 86]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4813,7 +4869,7 @@ B.2.  Since draft-ietf-httpbis-http2-14
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 86]
+Belshe, et al.         Expires September 25, 2015              [Page 87]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4869,7 +4925,7 @@ B.6.  Since draft-ietf-httpbis-http2-10
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 87]
+Belshe, et al.         Expires September 25, 2015              [Page 88]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4925,7 +4981,7 @@ B.8.  Since draft-ietf-httpbis-http2-08
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 88]
+Belshe, et al.         Expires September 25, 2015              [Page 89]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -4981,7 +5037,7 @@ B.12.  Since draft-ietf-httpbis-http2-04
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 89]
+Belshe, et al.         Expires September 25, 2015              [Page 90]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -5037,7 +5093,7 @@ B.15.  Since draft-ietf-httpbis-http2-01
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 90]
+Belshe, et al.         Expires September 25, 2015              [Page 91]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -5093,7 +5149,7 @@ Authors' Addresses
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 91]
+Belshe, et al.         Expires September 25, 2015              [Page 92]
 
 Internet-Draft                   HTTP/2                       March 2015
 
@@ -5149,4 +5205,4 @@ Internet-Draft                   HTTP/2                       March 2015
 
 
 
-Belshe, et al.         Expires September 17, 2015              [Page 92]
+Belshe, et al.         Expires September 25, 2015              [Page 93]
