@@ -1494,8 +1494,8 @@ else
                </p>
             </div>
             <div id="rfc.section.6.3.p.3">
-               <p>The new maximum size MUST be lower than or equal to the last value of the maximum size of the dynamic table. A value that
-                  exceeds this limit MUST be treated as a decoding error. In HTTP/2, this limit is the last value of the SETTINGS_HEADER_TABLE_SIZE
+               <p>The new maximum size MUST be lower than or equal to the limit determined by the protocol using HPACK. A value that exceeds
+                  this limit MUST be treated as a decoding error. In HTTP/2, this limit is the last value of the SETTINGS_HEADER_TABLE_SIZE
                   parameter (see <a href="https://tools.ietf.org/html/draft-ietf-httpbis-http2-17#section-6.5.2" title="Defined SETTINGS Parameters">Section 6.5.2</a> of <a href="#HTTP2"><cite title="Hypertext Transfer Protocol version 2">[HTTP2]</cite></a>) received from the decoder and acknowledged by the encoder (see <a href="https://tools.ietf.org/html/draft-ietf-httpbis-http2-17#section-6.5.3" title="Settings Synchronization">Section 6.5.3</a> of <a href="#HTTP2"><cite title="Hypertext Transfer Protocol version 2">[HTTP2]</cite></a>).
                </p>
             </div>
