@@ -461,7 +461,7 @@ ul p {
        content: "Peon & Ruellan";
   }
   @bottom-center {
-       content: "Expires September 25, 2015";
+       content: "Expires September 26, 2015";
   }
   @bottom-right {
        content: "[Page " counter(page) "]";
@@ -542,7 +542,7 @@ pre.text, pre.text2 {
       <meta name="dct.creator" content="Peon, R.">
       <meta name="dct.creator" content="Ruellan, H.">
       <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-httpbis-header-compression-latest">
-      <meta name="dct.issued" scheme="ISO8601" content="2015-03-24">
+      <meta name="dct.issued" scheme="ISO8601" content="2015-03-25">
       <meta name="dct.abstract" content="This specification defines HPACK, a compression format for efficiently representing HTTP header fields, to be used in HTTP/2.">
       <meta name="description" content="This specification defines HPACK, a compression format for efficiently representing HTTP header fields, to be used in HTTP/2.">
    </head>
@@ -562,12 +562,12 @@ pre.text, pre.text2 {
                <td class="right">H. Ruellan</td>
             </tr>
             <tr>
-               <td class="left">Expires: September 25, 2015</td>
+               <td class="left">Expires: September 26, 2015</td>
                <td class="right">Canon CRF</td>
             </tr>
             <tr>
                <td class="left"></td>
-               <td class="right">March 24, 2015</td>
+               <td class="right">March 25, 2015</td>
             </tr>
          </tbody>
       </table>
@@ -591,7 +591,7 @@ pre.text, pre.text2 {
             documents at any time. It is inappropriate to use Internet-Drafts as reference material or to cite them other than as “work
             in progress”.
          </p>
-         <p>This Internet-Draft will expire on September 25, 2015.</p>
+         <p>This Internet-Draft will expire on September 26, 2015.</p>
       </div>
       <div id="rfc.copyrightnotice">
          <h1><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
@@ -1494,8 +1494,8 @@ else
                </p>
             </div>
             <div id="rfc.section.6.3.p.3">
-               <p>The new maximum size MUST be lower than or equal to the limit determined by the protocol using HPACK. A value that exceeds
-                  this limit MUST be treated as a decoding error. In HTTP/2, this limit is the last value of the SETTINGS_HEADER_TABLE_SIZE
+               <p>The new maximum size MUST be lower than or equal to the last value of the maximum size of the dynamic table. A value that
+                  exceeds this limit MUST be treated as a decoding error. In HTTP/2, this limit is the last value of the SETTINGS_HEADER_TABLE_SIZE
                   parameter (see <a href="https://tools.ietf.org/html/draft-ietf-httpbis-http2-17#section-6.5.2" title="Defined SETTINGS Parameters">Section 6.5.2</a> of <a href="#HTTP2"><cite title="Hypertext Transfer Protocol version 2">[HTTP2]</cite></a>) received from the decoder and acknowledged by the encoder (see <a href="https://tools.ietf.org/html/draft-ietf-httpbis-http2-17#section-6.5.3" title="Settings Synchronization">Section 6.5.3</a> of <a href="#HTTP2"><cite title="Hypertext Transfer Protocol version 2">[HTTP2]</cite></a>).
                </p>
             </div>
